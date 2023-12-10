@@ -5,7 +5,7 @@ from .models import Usuario
 from .forms import UsuarioForm, UsuarioEditForm, LoginForm
 
 
-@login_required(login_url='login')
+#@login_required(login_url='login')
 def home_cliente(request):
     return render(request, 'home/home_cliente.html')
 
