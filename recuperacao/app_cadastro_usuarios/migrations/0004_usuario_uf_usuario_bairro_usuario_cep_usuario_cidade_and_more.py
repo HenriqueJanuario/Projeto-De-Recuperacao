@@ -11,57 +11,57 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AddField(
-            model_name='usuario',
+            model_name='Produto',
             name='UF',
             field=models.CharField(max_length=2, null=True),
         ),
         migrations.AddField(
-            model_name='usuario',
+            model_name='Produto',
             name='bairro',
             field=models.CharField(max_length=100, null=True),
         ),
         migrations.AddField(
-            model_name='usuario',
+            model_name='Produto',
             name='cep',
             field=models.CharField(max_length=8, null=True),
         ),
         migrations.AddField(
-            model_name='usuario',
+            model_name='Produto',
             name='cidade',
             field=models.CharField(max_length=100, null=True),
         ),
         migrations.AddField(
-            model_name='usuario',
+            model_name='Produto',
             name='complemento',
             field=models.CharField(max_length=100, null=True),
         ),
         migrations.AddField(
-            model_name='usuario',
+            model_name='Produto',
             name='email',
             field=models.EmailField(max_length=255, null=True),
         ),
         migrations.AddField(
-            model_name='usuario',
+            model_name='Produto',
             name='endereco',
             field=models.CharField(max_length=100, null=True),
         ),
         migrations.AddField(
-            model_name='usuario',
+            model_name='Produto',
             name='numero',
             field=models.CharField(max_length=8, null=True),
         ),
         migrations.AddField(
-            model_name='usuario',
+            model_name='Produto',
             name='telefone',
             field=models.CharField(max_length=11, null=True),
         ),
         migrations.AlterField(
-            model_name='usuario',
+            model_name='Produto',
             name='cpf',
             field=models.CharField(max_length=11, null=True, unique=True),
         ),
         migrations.AlterField(
-            model_name='usuario',
+            model_name='Produto',
             name='rg',
             field=models.CharField(max_length=9, null=True, unique=True),
         ),

@@ -11,17 +11,17 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AlterField(
-            model_name='usuario',
+            model_name='Produto',
             name='cpf',
             field=models.CharField(max_length=11),
         ),
         migrations.AlterField(
-            model_name='usuario',
+            model_name='Produto',
             name='nome',
             field=models.CharField(max_length=20),
         ),
         migrations.AlterField(
-            model_name='usuario',
+            model_name='Produto',
             name='rg',
             field=models.CharField(max_length=9),
         ),

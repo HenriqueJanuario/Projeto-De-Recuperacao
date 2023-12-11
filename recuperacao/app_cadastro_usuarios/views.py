@@ -1,8 +1,8 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login
-from .models import Usuario
-from .forms import UsuarioForm, UsuarioEditForm, LoginForm
+from .models import Produto
+from .forms import ProdutoForm, ProdutoEditForm, LoginForm
 
 
 #@login_required(login_url='login')
@@ -28,12 +28,12 @@ def login_view(request):
 
 def cadastro_cliente(request):
     if request.method == 'POST':
-        form = UsuarioForm(request.POST)
+        form = ProdutoForm(request.POST)
         if form.is_valid():
             form.save() 
             return redirect('listagem_cliente')
     else:
-        form = UsuarioForm()
+        form = ProdutoForm()
 
     return render(request, 'usuarios/cadastro_cliente.html', {'form': form})
 
@@ -49,12 +49,12 @@ def editar_cliente(request, usuario_id):
     usuario = get_object_or_404(Usuario, id_usuario=usuario_id)  
 
     if request.method == 'POST':
-        form = UsuarioEditForm(request.POST, instance=usuario)
+        form = ProdutoEditForm(request.POST, instance=produto)
         if form.is_valid():
             form.save()
             return redirect('listagem_cliente')
     else:
-        form = UsuarioEditForm(instance=usuario) 
+        form = ProdutoEditForm(instance=produto) 
 
     return render(request, 'usuarios/editar_cliente.html', {'form': form, 'usuario_id': usuario_id})
 
