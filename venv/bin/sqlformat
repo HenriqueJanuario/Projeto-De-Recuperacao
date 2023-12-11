@@ -1,4 +1,4 @@
-#!/home/luiz/Documentos/GitHub/aula_felipe/Projeto-De-Recuperacao/venv/bin/python
+#!/home/luiz/Documentos/GitHub/projeto_django_1/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

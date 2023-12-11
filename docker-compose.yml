@@ -2,21 +2,21 @@ version: '3.9'
 
 services:
   djangoapp:
-    container_name: recuperacao
+    container_name: djangoapp
     build:
       context: .
     ports:
       - 8000:8000
     volumes:
-      - ./recuperacao:/recuperacao
+      - ./djangoapp:/djangoapp
       - ./data/web/static:/data/web/static/
       - ./data/web/media:/data/web/media/
     env_file:
       - ./dotenv_files/.env
     depends_on:
-      - dbre
-  dbre:
-    container_name: dbre
+      - psql
+  psql:
+    container_name: psql
     image: postgres:13-alpine
     ports:
       - "5435:5432"
