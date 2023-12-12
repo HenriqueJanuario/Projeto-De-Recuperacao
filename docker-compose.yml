@@ -13,8 +13,11 @@ services:
       - ./data/web/media:/data/web/media/
     env_file:
       - ./dotenv_files/.env
-    depends_on:
-      - psql
+    environment:
+      - POSTGRES_HOST=psql
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=123
+
   psql:
     container_name: psql
     image: postgres:13-alpine
@@ -22,6 +25,8 @@ services:
       - "5435:5432"
     env_file:
       - ./dotenv_files/.env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
 
 volumes:
   postgres_data:

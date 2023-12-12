@@ -63,7 +63,7 @@ ROOT_URLCONF = 'projeto.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'app_cadastro_usuarios' / 'templates'],
+        'DIRS': [BASE_DIR / 'app_cadastro_usuarios' / 'templates' / 'usuarios'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -86,13 +86,12 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.getenv('POSTGRES_DB', 'projeto_django_db'),
-        'USER': os.getenv('POSTGRES_USER', 'projeto_user'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'root'),
+        'USER': os.getenv('POSTGRES_USER', 'admin'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD', '123'),
         'HOST': os.getenv('POSTGRES_HOST', 'psql'),
-        'PORT': os.getenv('POSTGRES_PORT', '5432'),
+        'PORT': os.getenv('POSTGRES_PORT', '5435'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -111,7 +110,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
@@ -140,3 +138,9 @@ MEDIA_ROOT = DATA_DIR / 'media'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Adição dos AUTHENTICATION_BACKENDS
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    # Outros backends, se aplicável
+]
