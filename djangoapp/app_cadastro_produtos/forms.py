@@ -5,7 +5,7 @@ from django.core.exceptions import ValidationError
 class ProdutosForm(forms.ModelForm):
     class Meta:
         model = Produtos
-        fields = ["nome", "valor", "quantidade", "imagem",]
+        fields = ["nome", "valor", "quantidade", "foto"]
 
     # Validação de número
     def clean_numero(self):
@@ -17,7 +17,7 @@ class ProdutosForm(forms.ModelForm):
 class ProdutosEditForm(forms.ModelForm):
     class Meta:
         model = Produtos
-        fields = ["nome", "valor", "quantidade", "imagem",]
+        fields = ["nome", "valor", "quantidade", ""]
 
     # Validação de número
     def clean_numero(self):

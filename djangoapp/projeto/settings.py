@@ -63,7 +63,7 @@ ROOT_URLCONF = 'projeto.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'app_cadastro_usuarios' / 'templates' / 'usuarios'],
+        'DIRS': [BASE_DIR / 'usuarios_fotos'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
